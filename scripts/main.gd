@@ -175,7 +175,7 @@ func _physics_process(delta: float) -> void:
 	if player == null:
 		return
 	var input_vector := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
-	var direction := player.global_transform.basis * Vector3(input_vector.x, 0, input_vector.y)
+	var direction := player.global_transform.basis * Vector3(input_vector.x, 0, -input_vector.y)
 	direction.y = 0
 	direction = direction.normalized()
 	player.velocity.x = direction.x * PLAYER_SCENELESS_SPEED
